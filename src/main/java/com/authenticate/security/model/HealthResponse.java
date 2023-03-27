@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class HealthResponse {
-    private String status;
-    private String statusNo;
+    private int statusNo;
+    private int bool;
+    private String response;
 }

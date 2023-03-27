@@ -20,13 +20,9 @@ public class FunctionalController {
     @PostMapping("/endpoint")
     public ResponseEntity<HealthResponse> endpoint(@RequestBody HealthRequest healthRequest) throws IOException {
         String url = healthRequest.getUrl();
-        String username = healthRequest.getUsername();
-        String password = healthRequest.getPassword();
-        HealthResponse healthResponse = HealthResponse.builder()
-                        .statusNo(endPointService.testingEndPoint(url))
-                                .status("")
-                                        .build();
-        return ResponseEntity.ok(healthResponse);
+        //url = "https://www.google.co.in/";
+        HealthResponse hr = endPointService.testingEndPointGet(url);
+        return ResponseEntity.ok(hr);
     }
 
 }
